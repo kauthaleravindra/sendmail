@@ -13,11 +13,12 @@ router.post('/sendmail',  (req, res)=>{
           pass: process.env.EMAIL_PASSWORD
         }
      });
+     const body = JSON.parse(req.body);
     const mailOptions = {
-        from: req.body.from, // Sender address
-        to: req.body.to, // List of recipients
-        subject: req.body.subject, // Subject line
-        text: req.body.message, // Plain text body
+        from: body.from, // Sender address
+        to: body.to, // List of recipients
+        subject: body.subject, // Subject line
+        text: body.message, // Plain text body
    };
    transport.sendMail(mailOptions, function(err, info) {
        if (err) {

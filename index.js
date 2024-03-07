@@ -15,8 +15,8 @@ app.use((req,res,next)=>{
  // Use the routing file for the specific methods
 
  app.use('/', routes);
-app.get('/timestamp', (req, res)=>{
-res.send(`${Date.now()}`)
+app.get('/', (req, res)=>{
+res.send(`${Date.now()}Getting started with node mailer!!!!!`)
 })
  app.use((err, req, res, next)=>{
      res.status(err.status || 500);
